@@ -1,0 +1,34 @@
+[1mdiff --git a/Aula_3/Questao6.c b/Aula_3/Questao6.c[m
+[1mindex 04d8c7f..246341d 100644[m
+[1m--- a/Aula_3/Questao6.c[m
+[1m+++ b/Aula_3/Questao6.c[m
+[36m@@ -1,5 +1,12 @@[m
+ /*Escreva um programa que leia um arquivo texto contendo uma lista de compras em que cada linha possui o nome[m
+[31m-do produto, a quantidade e o valor unitário de cada item para, em seguida, informar o valor total da compra.*/[m
+[32m+[m[32mdo produto, a quantidade e o valor unitário de cada item para, em seguida, informar o valor total da compra.[m
+[32m+[m
+[32m+[m[32mArroz 2 5.50[m
+[32m+[m[32mFeijão 3 3.00[m
+[32m+[m[32mCarne 1 15.75[m
+[32m+[m[32mLeite 4 2.50[m
+[32m+[m
+[32m+[m[32m*/[m
+ [m
+ #include<stdio.h>[m
+ #include<stdlib>[m
+[1mdiff --git "a/Aula_3/Quest\303\243o6_professor.c" "b/Aula_3/Quest\303\243o6_professor.c"[m
+[1mindex 04f9cc4..c95cde4 100644[m
+[1m--- "a/Aula_3/Quest\303\243o6_professor.c"[m
+[1m+++ "b/Aula_3/Quest\303\243o6_professor.c"[m
+[36m@@ -2,6 +2,11 @@[m
+ #include<stdlib>[m
+ #include<string.h>[m
+ [m
+[32m+[m[32m/*Arroz 2 5.50[m
+[32m+[m[32mFeijão 3 3.00[m
+[32m+[m[32mCarne 1 15.75[m
+[32m+[m[32mLeite 4 2.50*/[m
+[32m+[m
+ int main(){[m
+ [m
+     FILE *arquivo;[m
