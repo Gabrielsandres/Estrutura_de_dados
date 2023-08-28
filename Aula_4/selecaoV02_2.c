@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h> // Para utilizar a função time()
 
-#define ARRAY_SIZE 1000
+#define ARRAY_SIZE 10000
 
 void selectionSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
