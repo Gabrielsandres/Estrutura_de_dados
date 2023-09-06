@@ -1,33 +1,57 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void main(){
+int main() {
+    FILE *entrada;
+    FILE *saida;
+    char linha[100]; 
 
-    FILE *arquivo;
-    arquivo = fopen("DadosEntrada.csv", "r");
+    // Abra o arquivo CSV para leitura
+    entrada = fopen("DadosEntrada.csv", "r");
+    saida = fopen("SituacaoFinal.csv", "w");
 
-    if (arquivo == NULL) {
-    printf("Erro ao abrir o arquivo.\n");
-    exit(1);
+    if (entrada == NULL) {
+        perror("Erro ao abrir DadosEntrada");
+        return 1;
     }
 
-    char linha[1024];
-    char delim = ',';
+    if (saida == NULL) {
+        perror("Erro ao abrir SituacaoFinal");
+        return 1;
+    }
 
-    while (fgets(linha, sizeof(linha), arquivo) != NULL)
-    {
-        char *token = strtok(linha, delim);
+    char nomes[100][50];
+    char telefones[100][20];
+    char cursos[100][50];
+    float nota1[100];
+    float nota2[100];
+    float media[100];
+    char situacao[100][10];
+    int i = 0;
 
-        while (token != NULL) {
-
-            printf("Token: %s\n", token);
-            token = strtok(NULL, delim);
+    while (fgets(linha, sizeof(linha), entrada) != NULL) {
+        
+        if (sscanf(linha, "%49[^,],%19[^,],%49[^,],%f,%f", nomes[i], telefones[i], cursos[i], &nota1[i], &nota2[i]) == 5) {
+            media[i] = (nota1[i] + nota2[i]) / 2;
+            if (media[i] >= 7) {
+                strcpy(situacao[i], "Aprovado");
+            } else {
+                strcpy(situacao[i], "Reprovado");
+            }
+            i++;
         }
     }
+
+    fprintf(saida, "Nome,Curso,Media,Situacao\n");
+
+    for (int j = 0; j < i; j++) {   
+        fprintf(saida, "%s,  %s,  %.2f, %s\n", nomes[j], cursos[j], media[j], situacao[j]);
+    }
     
+    // Feche os arquivos
+    fclose(entrada);
+    fclose(saida);
 
-    
-
-    fclose(arquivo);
-
+    return 0;
 }
