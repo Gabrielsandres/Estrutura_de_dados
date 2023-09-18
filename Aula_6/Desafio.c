@@ -1,25 +1,16 @@
-#include <stdio.h>
-#include <sys/time.h>
-#include <stdlib.h>
-#include <time.h> // Para utilizar a função time()
+/*
+1- Cria um array de 1000 posições e calcular o tempo
+2- Cria um array de 10000 posições e calcular o tempo
+3- Cria um array de 100000 posições e calcular o tempo
+*/
 
-#define ARRAY_SIZE 10000
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>  
 
-void selectionSort(int arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        int minIndex = i;
+#define tamanho 1000
 
-        for (int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j;
-            }
-        }
 
-        int temp = arr[minIndex];
-        arr[minIndex] = arr[i];
-        arr[i] = temp;
-    }
-}
 
 int main() {
     int arr[ARRAY_SIZE];
