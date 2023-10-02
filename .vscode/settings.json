@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "dados.h": "c",
+        "TAG.C": "cpp"
+    }
+}
