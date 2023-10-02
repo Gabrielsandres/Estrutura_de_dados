@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#include"fracao.h"
+#include "fracao.h"
 
 
 int main () {
@@ -20,6 +20,8 @@ int main () {
     printf("\nSubtracao: %d/%d: ", subtracao.numerador, subtracao.denominador);
     printf("\nMultiplicacao: %d/%d: ", multiplicacao.numerador, multiplicacao.denominador);
     printf("\nDivisao: %d/%d: ", divisao.numerador, divisao.denominador);
+
+    return 0;
 
 
 
