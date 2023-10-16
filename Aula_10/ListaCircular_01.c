@@ -54,6 +54,10 @@ void adicionarElemento(ListaCircular *lista, Item *novoItem) {
     lista->tamanho++;
 }
 
+void numeroDeOcorrencias(ListaCircular *lista, Item *temp){
+    
+}
+
 int main() {
     ListaCircular *X = criarListaCircularVazia();
     Item *I1 = (Item *)malloc(sizeof(Item));
@@ -69,6 +73,12 @@ int main() {
     adicionarElemento(X, I3);
     adicionarElemento(X, I4);
     printf("Tamanho da lista: %d\n", X->tamanho);
+
+    Item *Temp = (Item *)malloc(sizeof(Item));
+    Temp->chave = 15;
+
+    int t = numeroDeOcorrencias(X, Temp);
+
 
     // Exibir a lista circular
     exibirListaCircular(X);
